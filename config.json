@@ -1,6 +1,7 @@
 {
   "extends": ["config:recommended", ":dependencyDashboard"],
   "semanticCommits": "enabled",
+  "automerge": false,
   "packageRules": [
     {
       "groupName": "jenkins-pipeline-common",
