@@ -1,0 +1,47 @@
+{
+  "extends": ["config:recommended", ":dependencyDashboard"],
+  "packageRules": [
+    {
+      "matchDatasources": ["maven"],
+      "registryUrls": [
+        "<<Artifactory URL>>"
+      ]
+    },
+    {
+      "groupName": "jenkins-pipeline-common",
+      "matchPackagePrefixes": [
+        "jenkins:jenkins-pipeline-common"
+      ]
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "git-tags"
+      ],
+      "matchHost": "<<GitLab host>>",
+      "datasource": "gitlab-tags"
+    },
+    {
+      "matchDatasources": [
+        "gitlab-tags"
+      ],
+      "registryUrls": [
+        "<<GitLab URL>>"
+      ]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true
+}
