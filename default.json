@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [ "local>devops/renovate-config:shared.json5" ],
+  "prHourlyLimit": 10,
+  "prConcurrentLimit": 20
+  "packageRules": [
+      {
+        "groupName": "jenkins-pipeline-common",
+        "matchPackagePrefixes": [ "jenkins:jenkins-pipeline-common" ],
+        "automerge": true
+      },
+      {
+        "matchManagers": ["gradle-wrapper"],
+        "matchDatasources": ["gradle-version"],
+        "automerge": true
+      },
+      {
+        "matchDatasources": ["maven"],
+        "matchDepNames": [ "erst.devops.erst-docker-release"],
+        "automerge": true
+      },
+      {
+        "matchDatasources": ["maven"],
+        "matchDepNames": [ "erst.devops.erst-helm-release" ],
+        "automerge": true
+      }
+  ]
+}
