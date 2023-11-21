@@ -10,6 +10,7 @@
         "automerge": true
       },
       {
+        "groupName": "Gradle",
         "matchManagers": ["gradle-wrapper"],
         "matchDatasources": ["gradle-version"],
         "automerge": true
